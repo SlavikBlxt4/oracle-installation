@@ -37,6 +37,7 @@ Once the setup is complete, you can connect to the Oracle database using the fol
 - **Password:** admin_password
 
 ## Directory Structure
+```
 ├── README.MD
 ├── RunAsAdmin.bat
 ├── docker-compose.yml
@@ -44,7 +45,7 @@ Once the setup is complete, you can connect to the Oracle database using the fol
 │   └── base_script.sql
 ├── setup-oracle.sh
 └── setup.ps1
-
+```
 
 - `docker-compose.yml`: Docker Compose configuration file.
 - `init-scripts/`: Directory containing the initial SQL script.
