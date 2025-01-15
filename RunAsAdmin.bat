@@ -2,7 +2,7 @@
 :: Verifica si el script se está ejecutando como administrador
 net session >nul 2>&1
 if %errorlevel% neq 0 (
-    echo Solicitando permisos de administrador...
+    echo Requesting admin privileges...
     powershell -Command "Start-Process cmd -ArgumentList '/c %~dpnx0' -Verb RunAs"
     exit /b
 )
