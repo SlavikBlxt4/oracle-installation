@@ -1,0 +1,14 @@
+version: '3.8'
+
+services:
+  oracle-xe:
+    image: gvenzl/oracle-xe:latest
+    container_name: oracle-xe
+    ports:
+      - "1521:1521" # Puerto para conexiones SQL
+      - "5500:5500" # Puerto para la consola de administración
+    environment:
+      ORACLE_PASSWORD: "admin_password" # Cambia esto por la contraseña del usuario SYS
+    volumes:
+      - ./init-scripts:/container-entrypoint-initdb.d # Scripts de inicialización
+      - ./oracle-data:/opt/oracle/oradata # Persistencia de datos
