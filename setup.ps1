@@ -73,5 +73,5 @@ Write-Host "¡Base de datos creada con éxito! Puedes conectarte con los siguien
 Write-Host "Host: localhost"
 Write-Host "Port: 1521"
 Write-Host "SID: XEPDB1"
-Write-Host "User: sys as sysdba"
-Write-Host "Password: admin_password"
+Write-Host "User: LOLO"
+Write-Host "Password: LOLOLAND"
