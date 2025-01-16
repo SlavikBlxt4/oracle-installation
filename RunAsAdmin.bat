@@ -10,6 +10,8 @@ if %errorlevel% neq 0 (
 :: Cambia al directorio donde está el script
 cd /d "%~dp0"
 
+:: Configura la política de ejecución para permitir scripts
+powershell -Command "Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser -Force"
+
 :: Ejecuta el script de PowerShell
 powershell -NoExit -ExecutionPolicy Bypass -File setup.ps1
-
