@@ -9,6 +9,9 @@ This project provides an easy way to install an Oracle database using Docker and
 - Docker (installed and running)
 - Docker Compose
 
+  If you do not have installed Docker Desktop, you can execute the .bat first and then install Docker Desktop manually. This will install WSL in your machine, necessary for the underlying Docker engine.
+  Then, you can rerun the script and finish installing.
+
 ## Setup Instructions
 
 ### Windows
