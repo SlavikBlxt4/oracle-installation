@@ -29,11 +29,9 @@ if (-not (Get-Command "docker" -ErrorAction SilentlyContinue)) {
         wsl --set-default-version 2
     }
 
-    # Descargar e instalar Docker Desktop
-    Write-Host "Descargando e instalando Docker Desktop..."
-    Invoke-WebRequest -Uri "https://desktop.docker.com/win/stable/Docker%20Desktop%20Installer.exe" -OutFile "$env:TEMP\\DockerDesktopInstaller.exe"
-    Start-Process -FilePath "$env:TEMP\\DockerDesktopInstaller.exe" -ArgumentList "/quiet" -NoNewWindow -Wait
-    Write-Host "Docker Desktop instalado correctamente. Por favor, reinicie su computadora y vuelva a ejecutar este script." -ForegroundColor Green
+    Write-Host "WSL2 está configurado correctamente."
+    Write-Host "Por favor, descarga e instala Docker Desktop manualmente desde: https://www.docker.com/products/docker-desktop"
+    Write-Host "Una vez instalado Docker Desktop, reinicia este script para continuar." -ForegroundColor Yellow
     Exit 0
 }
 
@@ -43,7 +41,7 @@ if (-not (docker info --format '{{.ServerErrors}}' 2>$null)) {
     Start-Process "Docker Desktop" -Wait
     Start-Sleep -Seconds 15
     if (-not (docker info --format '{{.ServerErrors}}' 2>$null)) {
-        Write-Host "Error: Docker Desktop no se está ejecutando. Por favor, inícielo manualmente." -ForegroundColor Red
+        Write-Host "Error: Docker Desktop no se está ejecutando. Por favor, inícialo manualmente." -ForegroundColor Red
         Exit 1
     }
 }
